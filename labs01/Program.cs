@@ -69,9 +69,9 @@ namespace lab01
 
 
                 Console.WriteLine("\nПоиск  суммы четных элементов  массива А =\n");
-
+                ms.Sum_chet_A(ms.GetmassA());
                 Console.WriteLine("\nПоиск  суммы нечетных элементов в столбцах массива В =\n");
-
+                ms.Sum_neChet_B(ms.GetmassB());
                 Console.WriteLine("\nЗадание номер 3\n");
                 Console.WriteLine("Введите числа  для массива M= \n");
                 ms.SetValueM();

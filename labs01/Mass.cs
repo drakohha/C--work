@@ -352,5 +352,36 @@ namespace lab01
         }
 
 
+        public int Sum_chet_A(int[] Z)
+        {
+            int sum_6 = 0;
+            foreach(int i in Z)
+            {
+                if (i % 2 == 0)
+                {
+                    sum_6 += i;
+                }
+            }
+            return sum_6;
+        }
+
+        public double Sum_neChet_B(double[,] Z)
+        {
+            double sum_7 = 0.0;
+            
+            for(int i = 0; i < rows; i++)
+            {
+                for(int j = 0; j < columns; i++)
+                {
+                    if (j % 2 != 0)
+                    {
+                        sum_7 += Z[i, j];
+                    }
+                }
+            }
+
+            return sum_7;
+        }
+
     }
 }
