@@ -10,14 +10,17 @@ namespace lab02
     {
         static void Main(string[] args)
         {
-
             stroki str = new stroki("new");
-
-           // str.palindrom(Console.ReadLine());
-            //str.zaglaf(Console.ReadLine());
-           // str.changle(Console.ReadLine());
-
-
+           Console.WriteLine("Введите строку");
+           str.palindrom(Console.ReadLine());
+           Console.WriteLine("Введите строку");
+            str.zaglaf(Console.ReadLine());
+            Console.WriteLine("Введите строку");
+            str.changle(Console.ReadLine());
+             Console.WriteLine("Введите строку из цифр");
+             str.chifru(Console.ReadLine());
+            Console.WriteLine("Введите строку");
+            str.sortslova(Console.ReadLine());
             Console.ReadLine();
         }
     }
