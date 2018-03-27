@@ -17,9 +17,13 @@ namespace lab06
             ls.AddElement("Леха", "Менеджмент", "243-43-55");
             ls.AddElement("Лена", "Бухгалтерия", "243-77-88");
 
-            ls.ShowInfo();
-            
+            ls.ShowInfo(ls);
 
+            ls[3] = ls.AddElementPoIndexy("qwer", "Торговля", "243-10-01");
+
+            ls.ShowInfo(ls);
+
+            Console.WriteLine( ls["Лена"]); 
             Console.ReadLine();
         }
     }

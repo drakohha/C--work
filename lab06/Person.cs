@@ -52,6 +52,13 @@ namespace lab06
                 
             }
         }
+        public string GetValueFio(string _fio)
+        {
+            if (this.fio == _fio)
+                return this.fio + ' ' + this.departament + ' ' + this.phone;
+            else
+                return null;
+        }
 
         public string GetValue()
         {
