@@ -19,11 +19,12 @@ namespace lab06
 
             ls.ShowInfo(ls);
 
-            ls[3] = ls.AddElementPoIndexy("qwer", "Торговля", "243-10-01");
-
+            string s = "qwer Торговля 243-10-01";
+            ls[3] = s;
             ls.ShowInfo(ls);
 
-            Console.WriteLine( ls["Лена"]); 
+            Console.WriteLine( ls["Лена"]);
+            Console.WriteLine(ls["Лена","243-77-88"]);
             Console.ReadLine();
         }
     }

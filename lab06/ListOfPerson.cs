@@ -63,19 +63,12 @@ namespace lab06
             }
             set
             {
-                if (indx > kol_elem)
-                {
-                    this.kol_elem++;
-                    stop.index = indx;
-                    this.stop = stop.next;
-                }
-                else
-                {
-                   
-                    this.kol_elem++;
-                    stop.index = indx + 1;
-                    this.stop = stop.next;
-                }
+                
+                    string[] ss = value.Split();
+                   // this.kol_elem++;
+                    this.AddElementPoIndexy(indx, ss[0], ss[1], ss[2]);
+                
+                
             }
         }
 
@@ -87,7 +80,7 @@ namespace lab06
                 this.link = this.start;
                 for (int i = 0; i < kol_elem; i++)
                 {
-                    s= start.GetValueFio(_fio);
+                    s= link.GetValueFio(_fio);
                     if (s != null)
                     {
                         return s;
@@ -115,10 +108,56 @@ namespace lab06
         }
 
 
-        public string AddElementPoIndexy(string _fio, string _departament, string _phone)
+        public string AddElementPoIndexy(int _index,string _fio, string _departament, string _phone)
         {
-            this.stop.next = new Person(_fio, _departament, _phone);
+            this.link = this.start;
+            this.stop.next= new Person(_fio, _departament, _phone);
+            this.kol_elem++;
+            this.stop.next.index = kol_elem;
+            this.stop = this.stop.next;
+
+            for (int i = 0; i < kol_elem; i++)
+            {
+                if (link.index == _index)
+                {
+                    this.stop.next = this.link.next;
+                    this.link = this.stop;
+                    this.stop.next = null;
+
+
+                    break;
+                }
+                else
+                {
+                    this.link = this.link.next;
+                }
+            }
+            
             return _fio + _departament + _phone;
+        }
+
+
+        public string  this[string _fio,string _phone]
+        {
+            get
+            {
+                string s;
+                this.link = this.start;
+                for (int i = 0; i < kol_elem; i++)
+                {
+                   
+                   s = link.GetValueToKey(_fio, _phone);
+                    if (s != null)
+                    {
+                        return s;
+                    }
+                    else
+                        this.link = this.link.next;
+
+                }
+                return "none";
+            }
+            set { }
         }
 
 

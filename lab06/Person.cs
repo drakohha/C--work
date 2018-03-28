@@ -60,6 +60,14 @@ namespace lab06
                 return null;
         }
 
+        public string GetValueToKey(string _fio,string _phone)
+        {
+            if(this.fio==_fio && this.phone==_phone)
+                return this.fio + ' ' + this.departament + ' ' + this.phone;
+            else
+                return null;
+        }
+
         public string GetValue()
         {
             return this.fio + ' ' + this.departament + ' ' + this.phone;
