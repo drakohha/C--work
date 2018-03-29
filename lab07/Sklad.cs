@@ -21,7 +21,20 @@ namespace lab07
         }
         public void SellAuto(int kol)
         {
-            this.kol_auto -= kol;
+            try
+            {
+                this.kol_auto -= kol;
+                if (this.kol_auto < 0)
+                {
+                    throw new MyExc() ;
+                }
+            }
+            catch (MyExc)
+            {
+                Console.WriteLine("ERROR! not inaf tovar in sklad");
+                this.kol_auto += kol;
+            }
+            
         }
 
         public string UserStatus()
@@ -30,6 +43,15 @@ namespace lab07
             return Convert.ToString(kol_auto);
         }
 
+        public Sklad()
+        {
+
+        }
+
+        public override void Velcom()
+        {
+            Console.WriteLine("это наш склад!!");
+        }
 
     }
 }

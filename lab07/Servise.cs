@@ -12,13 +12,20 @@ namespace lab07
         public Servise(string _type, int _prise, int _kol) : base(_type, _prise, _kol)
         {
         }
+        public Servise()
+        {
+
+        }
 
         public void Sell(Sklad sk,int kol)
         {
+            
             sk.SellAuto(kol);
+            
+            
             Console.WriteLine("Вы приобрели новый авто!");
         }
-        public void Velcom()
+        public override void Velcom()
         {
             Console.WriteLine("Добро пожаловать в наш магазин");
         }
