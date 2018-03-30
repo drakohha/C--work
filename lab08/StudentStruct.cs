@@ -38,7 +38,7 @@ namespace lab08
 
         public void Add(StudentStruct[] ss, StudentStruct st)
         {
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < ss.Count(); i++)
             {
                 if (ss[i].exist(ss, i) == false)
                 {
@@ -50,8 +50,25 @@ namespace lab08
         }
 
 
-        
+        public int Find(StudentStruct[] ss, string key)
+        {
+            int index = -1;
 
+            for (int i = 0; i < ss.Count(); i++)
+            {
+                if (ss[i].fio == key)
+                {
+                    return i;
+                }
+            }
+
+            return index;
+        }
+
+        public string Viev(StudentStruct[] ss,int index)
+        {
+            return ss[index].fio +' '+ ss[index].grup +' '+ss[index].ysp;
+        }
 
 
     }

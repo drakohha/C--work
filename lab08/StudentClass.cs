@@ -34,17 +34,43 @@ namespace lab08
 
         public void Add(StudentClass[] ss,StudentClass st)
         {
-            for(int i = 0; i < 100; i++)
+            int index = 0;
+            while (true)
             {
-                if (ss[i].exist(ss,i) == false)
+                if (ss[index] == null)
                 {
-                    ss[i] = st;
+                    ss[index] = st;
                     break;
                 }
+                else
+                {
+                    index++;
+                }
+
             }
+            
             
         }
 
+        public int Find(StudentClass[] ss,string key)
+        {
+            int index = -1;
+
+            for(int i = 0; i < ss.Count(); i++)
+            {
+                if (ss[i].fio == key)
+                {
+                    return i;
+                }
+            }
+
+            return index;
+        }
+
+        public string Viev(StudentClass[] ss, int index)
+        {
+            return ss[index].fio + ' ' + ss[index].grup + ' ' + ss[index].ysp;
+        }
 
     }
 }
