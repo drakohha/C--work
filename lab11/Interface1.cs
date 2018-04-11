@@ -9,6 +9,11 @@ namespace lab11
     interface Interface1<T>
         where T : IComparable
     {
-        T GetInfo();
+        void GetInfo();
+        void AddElem(T elem);
     }
+
+
+
+
 }

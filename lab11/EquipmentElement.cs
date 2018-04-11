@@ -10,7 +10,7 @@ namespace lab11
     {
         string name;
         string inv_number;
-        T Next;
+        public EquipmentElement<T> Next;
         DateTime datTime;
 
 

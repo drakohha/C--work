@@ -8,24 +8,49 @@ namespace lab11
 {
     class Program
     {
-        //delegate T MyDel<T>(T in_par1);
+       
         static void Main(string[] args)
         {
-            UserElement<string> r=new UserElement<string>("qweerty","torg","1560235");
-            CompanyList<UserElement<string>> li = new CompanyList<UserElement<string>>();
-            Interface1<UserElement<string>> it;
+
+
+
+            
+       
+            CompanyList<UserElement<int>> li = new CompanyList<UserElement<int>>();
+            CompanyList<EquipmentElement<int>> li2 = new CompanyList<EquipmentElement<int>>();
+            UserElement<int> elem = new UserElement<int>("qwerty", "torg", "15224523");
+            EquipmentElement<int> e_elem = new EquipmentElement<int>("fedor", "5566");
+
+            Interface1<UserElement<int>> it;
+          
+            Interface1<EquipmentElement<int>> it2;
 
             it = li;
+            it2 = li2;
 
+            it.AddElem(elem);
+            it2.AddElem(e_elem);
+            li.AddElement(elem);
+            li2.AddElement(e_elem);
+            li.AddElement(elem);
+            li.AddElement(elem);
 
-            li.AddNewElement(r);
-           // li.GetEnumerator();
-            foreach (var x in li.GetAllInfo())
+            foreach (var i in li)
             {
-                Console.WriteLine(x);
-
+                Console.WriteLine(li.GetEnumerator());
+                
             }
-                Console.ReadLine();
+            
+            foreach(var i in li2)
+            {
+                Console.WriteLine(li2.GetDataBetween(DateTime.Now, DateTime.Now));
+            }
+
+
+
+
+
+            Console.ReadLine();
 
         }
     }

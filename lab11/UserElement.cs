@@ -12,7 +12,9 @@ namespace lab11
         string department;
         string phone;
         DateTime datTime;
-        T Next;
+        public UserElement<T> Next;
+
+        
 
         public UserElement(string _fio,string _dep,string _phone)
         {
@@ -20,6 +22,8 @@ namespace lab11
             this.department = _dep;
             this.phone = _phone;
             this.datTime = DateTime.Now;
+            
+
         }
 
         public int CompareTo(object obj)
@@ -31,6 +35,14 @@ namespace lab11
         {
             return this.datTime;
         }
+
+
+        public void Show()
+        {
+            Console.WriteLine(this.fio +' ' +this.department +' '+ this.phone +' '+ this.datTime);
+        }
+
+
 
 
     }
