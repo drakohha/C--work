@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<users>
+  <user id="1">
+    <fio>Петя</fio>
+    <department>Админестратор</department>
+    <phone>22353</phone>
+    <DateBegin> 15 </DateBegin>
+  </user>
+  <user id="2">
+    <fio>Федар</fio>
+    <department>Админестратор</department>
+    <phone>346346</phone>
+    <DateBegin> 13 </DateBegin>
+  </user>
+  <user id="3">
+    <fio>Миха</fio>
+    <department>Кассир</department>
+    <phone>4587458</phone>
+    <DateBegin> 11 </DateBegin>
+  </user>
+</users>
+
+
+
